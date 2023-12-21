@@ -1,9 +1,6 @@
-import React from 'react';
-import './Scroll.css';
-
 const Scroll = (props) => {
   return (
-    <div className='scroll'>
+    <div style={{ overflow: 'scroll', border: '5px solid black', height: '600px'}}>
       {props.children}
     </div>
   );
