@@ -1,6 +1,5 @@
 import CardList from '../Components/cardList.js';
 import SearchBox from '../Components/SearchBox.js';
-// import { robots } from '../Components/robots.js';
 import { useState, useEffect } from 'react';
 import Scroll from '../Components/Scroll.js';
 import ErrorBoundry from '../Components/ErrorBoundry.js';
