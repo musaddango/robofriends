@@ -12,3 +12,11 @@ h1 {
   font-weight: 200;
   color: #0ccac4;
 }
+
+.scroll{overflow:scroll; 
+/*    height:500px; */
+/*    border:1px solid gray;*/
+    }
+.scroll::-webkit-scrollbar {
+      display: none;
+    }

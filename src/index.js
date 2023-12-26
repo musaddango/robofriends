@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react';
 // import ReactDOM from 'react-dom'; The new way to import createRoot:
 import './index.css';
-import App from './containers/App';
+import App from './Containers/App';
 import 'tachyons';
 // import registerServiceWorker from './registerServiceWorker';
 
