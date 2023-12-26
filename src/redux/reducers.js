@@ -1,13 +1,13 @@
-import { CHANGE_SEARCH_FIELD } from "./redux/constants.js";
+import { CHANGE_SEARCH_FIELD } from "./constants.js";
 
 const initialState = {
-    searchBox: ''
+    searchField: ''
 }
 
 export const reducer = (state=initialState, action = {})=>{
     switch(action.type){
         case CHANGE_SEARCH_FIELD:
-            return {...state, searchBox: action.payload};
+            return {...state, searchField: action.payload};
         default:
             return state;
     }

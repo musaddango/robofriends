@@ -6,9 +6,15 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import './App.css';
 import { connect } from 'react-redux';
 
-// const mapStateToProp = (state)=>({
-//   searchfield: state.SearchBox,
-// })
+import { setSearchField } from '../redux/actions';
+
+const mapStateToProp = (state)=>({
+  searchField: state.searchField,
+  });
+ 
+const mapDispatchToProp = (dispatch) =>({
+  onSearchChange: (event)=> dispatch(setSearchField(event.target.value))
+})
 
 
 class App extends Component {
@@ -16,7 +22,6 @@ class App extends Component {
     super()
     this.state = {
       robots: [],
-      searchfield: ''
     }
   }
 
@@ -29,21 +34,21 @@ class App extends Component {
       })
   }
 
-  onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value })
-  }
-
   render() {
-    const { robots, searchfield } = this.state;
+    const { robots } = this.state;
+
+    //dispatch is another option that can be used to dispatch actions directly without the use of the mapDispatchToProps function.
+    const {searchField, dispatch, onSearchChange } = this.props; 
+
     const filteredRobots = robots.filter(robot =>{
-      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+      return robot.name.toLowerCase().includes(searchField.toLowerCase());
     })
     return !robots.length ?
       <h1>Loading</h1> :
       (
         <div className='tc'>
           <h1 className='f1'>RoboFriends</h1>
-          <SearchBox searchChange={this.onSearchChange}/>
+          <SearchBox searchChange={ onSearchChange }/>
           <Scroll>
             <ErrorBoundary>
               <CardList robots={filteredRobots} />
@@ -54,4 +59,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProp, mapDispatchToProp)(App);
