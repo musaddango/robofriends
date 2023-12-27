@@ -1,9 +1,11 @@
-import { createStore } from 'redux';
-import { reducer } from './reducers';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { thunk } from 'redux-thunk';
 import logger from 'redux-logger';
-import { applyMiddleware } from 'redux';
+import {  } from 'redux';
+import { searchRobots, requestRobots } from './reducers';
 
-const store = createStore(reducer, applyMiddleware(logger, thunk));
+const rootReducer = combineReducers({ searchRobots, requestRobots})
+
+const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 
 export default store;
