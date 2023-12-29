@@ -11,12 +11,12 @@ import store from './redux/store';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-    <Provider store={store}>
-        <StrictMode>
-            <App />
-        </StrictMode>
-    </Provider>
-)
+            <Provider store={store}>
+                <StrictMode>
+                    <App />
+                </StrictMode>
+            </Provider>
+            )
 
 
 // ReactDOM.render(<App />, document.getElementById('root'));

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import CardList from '../components/CardList';
-import SearchBox from '../components/SearchBox';
+import SearchBox from '../components/SearchBox.js';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
-import './App.css';
-import { connect } from 'react-redux';
-
+import Header from '../components/Header';
 import { requestRobots, setSearchField } from '../redux/actions';
+import './App.css';
+
 
 const mapStateToProp = (state)=>({
   searchField: state.searchRobots.searchField,
@@ -21,9 +22,6 @@ const mapDispatchToProp = (dispatch) =>({
 
 
 class App extends Component {
-  constructor() {
-    super()
-  }
 
   componentDidMount() {
     this.props.requestRobots();
@@ -42,7 +40,7 @@ class App extends Component {
       <h1>Loading</h1> :
       (
         <div className='tc'>
-          <h1 className='f1'>RoboFriends</h1>
+          <Header />
           <SearchBox searchChange={ onSearchChange }/>
           <Scroll>
             <ErrorBoundary>
