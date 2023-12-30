@@ -3,7 +3,7 @@ import React, { StrictMode } from 'react';
 import './index.css';
 import App from './containers/App';
 import 'tachyons';
-// import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 import { createRoot } from "react-dom/client";
 import { Provider } from 'react-redux';
