@@ -10,7 +10,7 @@ export default class Header extends React.Component {
         console.log('Header')
         return (<>
                     <h1 className='f1'>RoboFriends</h1>
-                    <CounterButton color={'red'}/>
+                    {/* <CounterButton color={'red'}/> */}
                 </>
                 )
     }
