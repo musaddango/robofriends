@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Smart Brain",
+    "short_name": "Smart Brain",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -9,7 +9,7 @@
         },
         {
             "src": "/android-chrome-256x256.png",
-            "sizes": "512x512",
+            "sizes": "256x256",
             "type": "image/png"
         }
     ],
