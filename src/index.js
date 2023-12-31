@@ -3,7 +3,7 @@ import React, { StrictMode } from 'react';
 import './index.css';
 import App from './containers/App';
 import 'tachyons';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 import { createRoot } from "react-dom/client";
 import { Provider } from 'react-redux';
@@ -19,5 +19,10 @@ root.render(
             )
 
 
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://cra.link/PWA
+serviceWorkerRegistration.register();
+
 // ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
