@@ -1,7 +1,10 @@
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Card from './Card';
 
 it('expect to render Card component', ()=>{
-    expect(shallow(<Card />)).toMatchSnapshot();
-    console.log(shallow(<Card />).debug());
-})
+    const wrapper = shallow(<Card />)
+
+    expect(toJson(wrapper)).toMatchSnapshot();
+    // console.log(shallow(<Card />).debug());
+});
