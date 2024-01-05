@@ -21,7 +21,7 @@ export default class CounterButton extends React.Component {
     render(){
         console.log('CounterButton')
         return (
-            <button color={this.state.color} onClick={this.updateCount}>
+            <button className='button' color={this.state.color} onClick={this.updateCount}>
                 Count: {this.state.count}
             </button>
         )
