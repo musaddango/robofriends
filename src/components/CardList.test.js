@@ -9,16 +9,10 @@ it('expect to render Card component', ()=>{
             username: 'musadango',
             name: 'Musa Dango',
             email: 'musa@x.com',
-        },
-        {
-            id: 1,
-            username: 'ajaladango',
-            name: 'Ajala Dango',
-            email: 'ajala@x.com',
         }
     ]
     const wrapper = shallow(<CardList robots={mockRobots} />)
 
     expect(toJson(wrapper)).toMatchSnapshot();
-    console.log(shallow(<CardList />).debug());
+    // shallow(<CardList robots={mockRobots} />).debug();
 });

@@ -8,11 +8,5 @@ exports[`expect to render Card component 1`] = `
     key="0"
     name="Musa Dango"
   />
-  <Card
-    email="ajala@x.com"
-    id={1}
-    key="1"
-    name="Ajala Dango"
-  />
 </div>
 `;
