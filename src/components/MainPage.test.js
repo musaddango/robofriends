@@ -3,16 +3,23 @@ import toJson from 'enzyme-to-json';
 import App from './MainPage';
 import { robots } from './robots';
 
-it('expect to render Card component', ()=>{
+let wrapper;
+beforeEach(()=>{
     const mockState = {
-        robots,
-        searchField: 'A',
-        requestRobots: ()=>{}
-    }
-    const wrapper = shallow(<App 
-        robots = {mockState.robots} 
-        searchField = {mockState.searchField} 
-        requestRobots={mockState.requestRobots}/>)
+    robots,
+    searchField: 'A',
+    requestRobots: jest.fn()
+}
+    wrapper = shallow(<App 
+    robots = {mockState.robots} 
+    searchField = {mockState.searchField} 
+    requestRobots={mockState.requestRobots}/>)
+})
 
+it('It renders main page without crashing.', ()=>{
     expect(toJson(wrapper)).toMatchSnapshot();
 });
+
+it('Robots are properly filtered.', ()=>{
+    
+})
