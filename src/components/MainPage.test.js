@@ -11,9 +11,10 @@ beforeEach(()=>{
     requestRobots: jest.fn()
 }
     wrapper = shallow(<App 
-    robots = {mockState.robots} 
-    searchField = {mockState.searchField} 
-    requestRobots={mockState.requestRobots}/>)
+                    robots = {mockState.robots} 
+                    searchField = {mockState.searchField} 
+                    requestRobots={mockState.requestRobots}
+                    />)
 })
 
 it('It renders main page without crashing.', ()=>{
@@ -21,5 +22,16 @@ it('It renders main page without crashing.', ()=>{
 });
 
 it('Robots are properly filtered.', ()=>{
-    
-})
+    const mockState2 = {
+        robots:[
+            {
+                id: 2,
+                name: 'Millie Johnson',
+                email: 'techie@xmail.com'
+            }
+        ],
+        searchField: 'A',
+        requestRobots: jest.fn()
+    }
+  expect(wrapper.instance().filteredRobots(mockState2.robots,'Mill')).toEqual(mockState2.robots);
+});

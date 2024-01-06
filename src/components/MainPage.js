@@ -6,12 +6,16 @@ import ErrorBoundary from './ErrorBoundary';
 import Header from './Header';
 import './MainPage.css';
 
-
-
 class MainPage extends Component {
 
   componentDidMount() {
     this.props.requestRobots();
+  }
+
+  filteredRobots = (robots, searchField) =>{
+    return robots.filter(robot =>{
+      return robot.name.toLowerCase().includes(searchField.toLowerCase());
+    })
   }
 
   render() {
@@ -19,10 +23,7 @@ class MainPage extends Component {
     //dispatch is another option that can be used to dispatch actions directly without the 
     // use of the mapDispatchToProps function.
     const {searchField, dispatch, onSearchChange,robots, isPending } = this.props; 
-
-    const filteredRobots = robots.filter(robot =>{
-      return robot.name.toLowerCase().includes(searchField.toLowerCase());
-    })
+    
     return isPending ?
       <h1>Loading</h1> :
       (
@@ -31,7 +32,7 @@ class MainPage extends Component {
           <SearchBox searchChange={ onSearchChange }/>
           <Scroll>
             <ErrorBoundary>
-              <CardList robots={filteredRobots} />
+              <CardList robots={this.filteredRobots(robots, searchField)} />
             </ErrorBoundary>
           </Scroll>
         </div>
