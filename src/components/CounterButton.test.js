@@ -8,7 +8,7 @@ it('expect to render Card component', ()=>{
 
     const button = wrapper.find('.button');
     button.simulate('click');
-    const state = wrapper.state()
-    expect(state.count).toEqual(1);
+    const count = wrapper.state().count
+    expect(count).toEqual(1);
     // expect(toJson(wrapper)).toMatchSnapshot();
 });
