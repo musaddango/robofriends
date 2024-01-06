@@ -20,6 +20,6 @@ export const requestRobots = () =>{
     }
     catch(error){
         return dispatch({type: REQUEST_ROBOTS_FAILED, payload: error});
-    }
+        }
     }
 }
