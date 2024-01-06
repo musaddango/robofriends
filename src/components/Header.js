@@ -7,7 +7,6 @@ export default class Header extends React.Component {
     //     return false;
     // }
     render(){
-        console.log('Header')
         return (<>
                     <h1 className='f1'>RoboFriends</h1>
                     <CounterButton color={'red'}/>

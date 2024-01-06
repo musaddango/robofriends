@@ -19,9 +19,9 @@ const mapDispatchToProp = (dispatch) =>({
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.requestRobots();
-  }
+  // componentDidMount() {
+  //   this.props.requestRobots();
+  // }
 
   render() {
       return(

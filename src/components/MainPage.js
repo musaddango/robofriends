@@ -4,7 +4,7 @@ import SearchBox from './SearchBox.js';
 import Scroll from './Scroll';
 import ErrorBoundary from './ErrorBoundary';
 import Header from './Header';
-import '../containers/App.css';
+import './MainPage.css';
 
 
 
