@@ -1,6 +1,14 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 
-class ErrorBoundary extends Component {
+interface State {
+    hasError: boolean,
+}
+
+interface Props {
+    children: React.JSX.Element
+}
+
+class ErrorBoundary extends Component<Props, State> {
     constructor(props){
         super(props);
         this.state = {

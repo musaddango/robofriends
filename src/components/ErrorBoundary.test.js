@@ -7,7 +7,6 @@ it('expect to render Card component', ()=>{
     const state = wrapper.state();
 
     expect(state.hasError).toBe(false);
-
-    // expect(toJson(wrapper)).toMatchSnapshot();
+    expect(toJson(wrapper)).toMatchSnapshot();
     // console.log(shallow(<Card />).debug());
 });

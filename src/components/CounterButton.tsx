@@ -1,7 +1,16 @@
 import React from 'react';
 
-export default class CounterButton extends React.Component {
-    constructor(props){
+interface Props {
+    color: string;
+}
+
+interface IState {
+    count: number;
+    color?: string
+}
+
+export default class CounterButton extends React.Component<React.ComponentProps<'div'>, IState> {
+    constructor(props: Props){
         super(props);
         this.state = {
             count: 0
@@ -12,13 +21,13 @@ export default class CounterButton extends React.Component {
         return true
     }
 
-    updateCount = ()=>{
-        this.setState(state=>{
+    updateCount = (): void =>{
+        this.setState((state)=>{
             return {count: state.count + 1}
         });
     }
 
-    render(){
+    render(): React.JSX.Element {
         return (
             <button className='button' color={this.state.color} onClick={this.updateCount}>
                 Count: {this.state.count}

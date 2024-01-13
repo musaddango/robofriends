@@ -1,11 +1,11 @@
 import React, { StrictMode } from 'react';
 // import ReactDOM from 'react-dom'; The new way to import createRoot:
 import './index.css';
-import App from './containers/App';
+import App from './containers/App.tsx';
 import 'tachyons';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-import { createRoot } from "react-dom/client";
+import { Root, createRoot } from "react-dom/client";
 import { Provider } from 'react-redux';
 import store from './redux/store';
 

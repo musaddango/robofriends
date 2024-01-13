@@ -1,12 +1,18 @@
 import React from 'react';
-import Card from './Card';
+import Card from './Card.tsx';
 
+interface RobotObject{
+    id: number,
+    name: string,
+    username?: string,
+    email: string,
+  }
 
 const CardList = ({ robots }) => {
   return (
     <div>
       {
-        robots.map((user, i) => {
+        robots.map((user: RobotObject, i: number) => {
           return (
             <Card
               key={i}
