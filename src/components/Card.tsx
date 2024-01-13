@@ -6,7 +6,7 @@ interface Props{
   id: number;
 }
 
-const Card = ({ name, email, id }: Props) => {
+const Card: React.FunctionComponent<Props> = ({ name, email, id }) => {
   return (
     <div className='tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5'>
       <img height={'200px'} width={'200px'} alt='robots' src={`https://robohash.org/${id}?size=200x200`} />

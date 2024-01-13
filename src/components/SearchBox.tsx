@@ -1,6 +1,10 @@
 import React from 'react';
 
-const SearchBox = ({ searchChange }) => {
+interface ISearchProps {
+  searchChange: React.ChangeEventHandler<HTMLInputElement> | undefined,
+}
+
+const SearchBox: React.FC<ISearchProps> = ({ searchChange }) => {
   return (
     <div className='pa2'>
       <input

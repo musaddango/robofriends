@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { ReactReduxContext, connect } from 'react-redux';
+import { connect } from 'react-redux';
 import MainPage from '../components/MainPage.tsx';
 import { requestRobots, setSearchField } from '../redux/actions.js';
 import './App.css';
 
-
+interface mapState {
+  
+}
 
 const mapStateToProp = (state)=>({
   searchField: state.searchRobots.searchField,
@@ -27,11 +29,11 @@ interface AppProps {
   searchField: string,
   robots: RobotObject[],
   isPending: boolean,
-  onSearchChange: void,
+  onSearchChange: React.ChangeEventHandler<HTMLInputElement> | undefined,
   requestRobots: any,
 }
 
-class App extends Component<AppProps> {
+class App extends Component<AppProps, {}> {
 
   render() {
       return(

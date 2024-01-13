@@ -16,12 +16,12 @@ interface RobotObject{
     searchField: string,
     robots: RobotObject[],
     isPending: boolean,
-    onSearchChange: void,
+    onSearchChange: React.ChangeEventHandler<HTMLInputElement> | undefined,
     requestRobots: any,
   }
 
 
-class MainPage extends Component<MainPageProps> {
+class MainPage extends Component<MainPageProps, {}> {
 
   componentDidMount() {
     this.props.requestRobots();
