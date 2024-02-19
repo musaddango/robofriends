@@ -5,20 +5,20 @@ orbs:
 
 jobs:
   build_and_test:
-      docker:
+    docker:
       - image: cimg/node:21.6.1
-    steps:
-      - checkout
-      - run:
-          command: npm run test
-          name: Run tests
-      - run:
-          command: npm run build
-          name: Build app
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
+      steps:
+        - checkout
+        - run:
+            command: npm run test
+            name: Run tests
+        - run:
+            command: npm run build
+            name: Build app
+        - persist_to_workspace:
+            root: ~/project
+            paths:
+              - .
 workflow:
   version: 2.1
   test_build:
