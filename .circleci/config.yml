@@ -19,6 +19,7 @@ jobs:
             root: ~/project
             paths:
               - .
+
 workflow:
   version: 2.1
   test_build:
