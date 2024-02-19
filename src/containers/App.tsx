@@ -5,7 +5,9 @@ import { requestRobots, setSearchField } from '../redux/actions.js';
 import './App.css';
 
 interface mapState {
-  
+  searchField: string,
+  robots: RobotObject[],
+  isPending: boolean,
 }
 
 const mapStateToProp = (state)=>({
@@ -34,6 +36,9 @@ interface AppProps {
 }
 
 class App extends Component<AppProps, {}> {
+  constructor(props){
+    super(props);
+  }
 
   render() {
       return(
