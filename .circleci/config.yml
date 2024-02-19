@@ -9,6 +9,7 @@ jobs:
       - run: npm run test
       - run: npm run build
 
-workflow:
+workflows:
   test_build:
-    jobs: build_and_test
+    jobs: 
+      - build_and_test
