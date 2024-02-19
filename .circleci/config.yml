@@ -6,10 +6,18 @@ jobs:
       - image: cimg/node:21.6.1
     steps:
       - checkout
-      - run: npm run test
-      - run: npm run build
+      - run:
+          command: npm run test
+          name: Run test
+      - run:
+          command: npm run build
+          name: Build app
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
 
 workflows:
   test_build:
-    jobs: 
+    jobs:
       - build_and_test
